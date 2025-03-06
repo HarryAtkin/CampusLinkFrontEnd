@@ -1,2 +1,2 @@
-# CampusLinkFrontEnd
-This is contains a simple http server and frontend files for campusLink.
+# HTTP_Java
+This project was used to help me learn how to open and control data coming in through sockets using java.

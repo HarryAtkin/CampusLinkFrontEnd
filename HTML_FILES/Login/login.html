@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>CampusLink</title>
+</head>
+<body class="login">
+    <div class="container">
+        <h1>CampusLink</h1>
+        <h2>Welcome back,<br>please sign in below</h2>
+        
+        <div class="login_form">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="user" required>
+
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" required>
+
+            <a href = "#" class="forgot-pass-link">Forgotten password?</a>
+
+
+            <div class="button">
+                <input id="btnLogin" onclick='POST(document.getElementById("username").value, document.getElementById("password").value, "http://localhost:8080/api/v1/login")' type="submit" name="submit" value="Log In" class="btn_login">
+                <p>Don't have an account? <a href="register.html">Register</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        async function POST(email, password, url){
+
+        let data = {
+            Email : email,
+            Password : password
+        };
+
+        let HTTPData = {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: new Headers({
+                'Content-Type': 'application/json; charset=UTF-8'
+            })
+        };
+
+        const response1 = await fetch(url, HTTPData)
+
+        //const header = document.getElementById('data');
+
+        if(response1.status == 202){
+            //header.innerHTML = "Logged in"
+            console.log("logged in")
+        }
+
+        else if (response1.status == 401){
+            //header.innerHTML = "Incorrect Email or Password"
+            console.log("incorrect email or password")
+        }
+
+        else if (response1.status == 500){
+            //header.innerHTML = "It's not you it's us :("
+            console.log("It's not you it's us :(")
+        }
+
+        //const btnLogin = document.getElementById("btnLogin")
+        //btnLogin.onclick
+
+        
+    }
+
+
+
+    </script>
+
+</body>
+</html>
