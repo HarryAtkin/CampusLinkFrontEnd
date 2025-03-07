@@ -1,2 +1,4 @@
-# HTTP_Java
-This project was used to help me learn how to open and control data coming in through sockets using java.
+# CampusLink Front
+This is a simple http server that opens a port on 5500 and sends the user our front end html file.
+Link:
+http://localhost:5500/
