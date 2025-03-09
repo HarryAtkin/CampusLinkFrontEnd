@@ -36,7 +36,7 @@ public class Server {
 
         StringBuilder buildRequests = new StringBuilder(); //This will create a string for the request from the client
         String line;
-        while (!(line = in.readLine()).isBlank()) {//Runs while there is an input from the socket input
+        while (!(line = in.readLine()).isBlank() || line == null) {//Runs while there is an input from the socket input
             buildRequests.append(line + "\r\n");//Adds the socket input to the request string
         }
 

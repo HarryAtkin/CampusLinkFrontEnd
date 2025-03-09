@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="chat_styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <div class="Profile">
+            <form class="Search">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <i class="fas fa-user-circle" style="font-size: 30px;"></i>
+        </div>
+        <div class="NavBar">
+            <ul>
+                <li><i class='fas fa-home'></i></li>
+                <li><i class="fa fa-th"></i></li>
+                <li><i class='far fa-comments'></i></li>
+                <li><i class='far fa-calendar-alt'></i></li>
+                <li><i class='fa fa-gear'></i></li>
+                <li><i class='fa fa-sign-out'></i></li>
+            </ul>
+        </div>
+        <div class="GroupChat">
+            <div class="group-header">
+                <h1>Groups <i class="fas fa-users"></i></h1>
+                <button class="JoinAGroup">Join a new Group</button>
+            </div>
+            <div class="group-box" id="groupBox">
+<!--                <div class="group-item">Group 5</div>-->
+<!--                <div class="group-item">Group 6</div>-->
+<!--                <div class="group-item">Group 1</div>-->
+<!--                <div class="group-item">Group 2</div>-->
+<!--                <div class="group-item">Group 3</div>-->
+<!--                <div class="group-item">Group 4</div>-->
+<!--                <div class="group-item">Group 7</div>-->
+<!--                <div class="group-item">Group 8</div>-->
+<!--                <div class="group-item">Group 9</div>-->
+<!--                <div class="group-item">Group 10</div>-->
+<!--                <div class="group-item">Group 11</div>-->
+<!--                <div class="group-item">Group 123</div>-->
+<!--                <div class="group-item">Group 3</div>-->
+<!--                <div class="group-item">Group 3</div>-->
+<!--                <div class="group-item">Group 3</div>-->
+<!--                <div class="group-item">Group 3</div>-->
+<!--                <div class="group-item">Group 3</div>-->
+            </div>
+        </div>
+        <div class="Reminder" id="reminder">
+            <h1>Reminder <i class='far fa-bell'></i></h1>
+            <div class="Reminder_box">
+                <div class="reminder-item">Item 1</div>
+                <div class="reminder-item">Item 2</div>
+                <div class="reminder-item">Item 3</div>
+                <div class="reminder-item">Item 4</div>
+                <div class="reminder-item">Item 5</div>
+                <div class="reminder-item">Item 6</div>
+                <div class="reminder-item">Item 7</div>
+            </div>
+        </div>
+
+        <script>
+            async function GET(){
+
+                console.log(sessionStorage.getItem("Email"))
+                let HTTPData = {
+                    method: 'POST',
+                    body: sessionStorage.getItem("Email"),
+                    headers: new Headers({
+                        'Content-Type': 'application/json; charset=UTF-8'
+                    })
+                };
+
+                let response1 = await fetch("http://localhost:8080/api/v1/chatRoom", HTTPData)
+
+                try{
+                let chatList = document.getElementById("reminder")
+                const response = await fetch("http://localhost:8080/api/v1/chatRoom")
+                .then(response1=> response1.json())
+                //.then(data => function(){//This is the issue.
+                    //Get each thing and then map to the list.
+                    //This is broken
+
+
+                console.log(response)
+                //let element = document.createElement('div');
+                for(let i = 0; i < response.length; i++){ //Make this into a class
+                    element = document.createElement('div');
+                    element.className = "group-item"
+                    element.onclick = () => {
+                        sessionStorage.setItem("chatRoomSelection", response[i]);
+                        window.location.href = "ChatRoom.html"}
+                    element.appendChild(document.createTextNode(response[i]))
+                    document.getElementById("groupBox").appendChild(element);
+                }
+                }catch{
+                    element = document.createElement('div');
+                    element.className = "group-item"
+                    //element.onclick =
+                    element.appendChild(document.createTextNode("Unable to get data from the server"))
+                    document.getElementById("groupBox").appendChild(element);
+                }
+
+
+                    //chatList.appendChild(element);
+                    //document.body.insertBefore(element, chatList)
+
+
+                    /*
+                    let name = data.name
+                    let box = `<div class='group-item'>${name}</div>`;
+                    chatList.append(box) //Check this.
+
+                     */
+
+                /*for(let i = 0; i < 3; i++){
+                    let name = response[i]
+                    let box = "<div class='group-item'>, name ,</div>";
+                    chatList.append(box) //Check this.
+                }
+
+                 */
+            }
+            try{
+                if (sessionStorage.getItem("Authenticated") !== "True"){
+                    window.location.href = "login.html";
+                }
+            }catch{
+                window.location.href = "login.html";
+            }
+            GET();
+        </script>
+
+    </body>
+</html>
