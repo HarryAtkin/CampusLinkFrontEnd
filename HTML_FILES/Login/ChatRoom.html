@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        console.log(sessionStorage.getItem("chatRoomSelection"))
+
+        async function GETComments(){
+
+            let HTTPData = {
+                method: 'POST',
+                body: sessionStorage.getItem("chatRoomSelection"),
+                headers: new Headers({
+                    'Content-Type': 'application/json; charset=UTF-8'
+                })
+            };
+
+            let response1 = await fetch("http://localhost:8080/api/v1/chatRoom/Room", HTTPData)
+
+            response = await fetch("http://localhost:8080/api/v1/chatRoom/Room")
+                .then(response => response.json())
+            for(let i = 0; i < response.length; i++){
+                console.log(response[i]);
+            }
+        }
+
+
+        GETComments();
+
+    </script>
+</body>
+</html>
