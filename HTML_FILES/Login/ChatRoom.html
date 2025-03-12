@@ -8,8 +8,12 @@
     <script>
         console.log(sessionStorage.getItem("chatRoomSelection"))
 
-        async function GETComments(){
+        function rest(ms) {
+            new Promise(resolve => setTimeout(resolve, ms));
+            window.location.reload()
+        }
 
+        async function PostChatroomName() {
             let HTTPData = {
                 method: 'POST',
                 body: sessionStorage.getItem("chatRoomSelection"),
@@ -19,6 +23,9 @@
             };
 
             let response1 = await fetch("http://localhost:8080/api/v1/chatRoom/Room", HTTPData)
+        }
+
+        async function GETComments(){
 
             response = await fetch("http://localhost:8080/api/v1/chatRoom/Room")
                 .then(response => response.json())
@@ -28,6 +35,10 @@
         }
 
 
+        PostChatroomName();
+        rest(50000000);
+        GETComments();
+        rest(2000);
         GETComments();
 
     </script>

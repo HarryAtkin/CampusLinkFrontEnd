@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f50d1a0f-4b5d-4a6c-848d-27956e3eec00" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/GroupChat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/ChatRoom.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/ChatRoom.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,7 @@
     "JavaScript Debug.login.html.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "HTML__File/Chat",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/harry/Desktop/CampusLink/CampusLink",
     "node.js.detected.package.eslint": "true",
@@ -86,7 +85,11 @@
       <workItem from="1741362720317" duration="133000" />
       <workItem from="1741437388132" duration="4715000" />
       <workItem from="1741455488321" duration="2181000" />
-      <workItem from="1741472393236" duration="9426000" />
+      <workItem from="1741472393236" duration="8237000" />
+      <workItem from="1741527151810" duration="26000" />
+      <workItem from="1741529432609" duration="165000" />
+      <workItem from="1741614814740" duration="102000" />
+      <workItem from="1741617803118" duration="2920000" />
     </task>
     <servers />
   </component>
