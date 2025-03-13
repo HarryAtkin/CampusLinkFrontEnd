@@ -3,10 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="chat_styles.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
     <body>
+
+    <aside class="sidebar">
+        <div class="logo">CampusLink</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <!--                <li><a href="#">My Studies</a></li>-->
+                <li><a href="GroupChat.html">Discussions</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">Settings</a></li>
+                <!--                <li><a href="#">Help Centre</a></li>-->
+            </ul>
+        </nav>
+    </aside>
+
+
         <div class="Profile">
             <form class="Search">
                 <input type="text" placeholder="Search.." name="search">
@@ -14,21 +31,21 @@
             </form>
             <i class="fas fa-user-circle" style="font-size: 30px;"></i>
         </div>
-        <div class="NavBar">
-            <ul>
-                <li><i class='fas fa-home'></i></li>
-                <li><i class="fa fa-th"></i></li>
-                <li><i class='far fa-comments'></i></li>
-                <li><i class='far fa-calendar-alt'></i></li>
-                <li><i class='fa fa-gear'></i></li>
-                <li><i class='fa fa-sign-out'></i></li>
-            </ul>
-        </div>
+<!--        <div class="NavBar">-->
+<!--            <ul>-->
+<!--                <li><i class='fas fa-home'></i></li>-->
+<!--                <li><i class="fa fa-th"></i></li>-->
+<!--                <li><i class='far fa-comments'></i></li>-->
+<!--                <li><i class='far fa-calendar-alt'></i></li>-->
+<!--                <li><i class='fa fa-gear'></i></li>-->
+<!--                <li><i class='fa fa-sign-out'></i></li>-->
+<!--            </ul>-->
+<!--        </div>-->
         <div class="GroupChat">
             <div class="group-header">
                 <h1>Groups <i class="fas fa-users"></i></h1>
-                <button class="JoinAGroup">Join a new Group</button>
-            </div>
+<!--                <button class="JoinAGroup">Join a new Group</button>-->
+                </div>
             <div class="group-box" id="groupBox">
 <!--                <div class="group-item">Group 5</div>-->
 <!--                <div class="group-item">Group 6</div>-->
@@ -49,18 +66,18 @@
 <!--                <div class="group-item">Group 3</div>-->
             </div>
         </div>
-        <div class="Reminder" id="reminder">
-            <h1>Reminder <i class='far fa-bell'></i></h1>
-            <div class="Reminder_box">
-                <div class="reminder-item">Item 1</div>
-                <div class="reminder-item">Item 2</div>
-                <div class="reminder-item">Item 3</div>
-                <div class="reminder-item">Item 4</div>
-                <div class="reminder-item">Item 5</div>
-                <div class="reminder-item">Item 6</div>
-                <div class="reminder-item">Item 7</div>
-            </div>
-        </div>
+<!--        <div class="Reminder" id="reminder">-->
+<!--            <h1>Reminder <i class='far fa-bell'></i></h1>-->
+<!--            <div class="Reminder_box">-->
+<!--                <div class="reminder-item">Item 1</div>-->
+<!--                <div class="reminder-item">Item 2</div>-->
+<!--                <div class="reminder-item">Item 3</div>-->
+<!--                <div class="reminder-item">Item 4</div>-->
+<!--                <div class="reminder-item">Item 5</div>-->
+<!--                <div class="reminder-item">Item 6</div>-->
+<!--                <div class="reminder-item">Item 7</div>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <script>
             async function GET(){
@@ -126,10 +143,10 @@
             }
             try{
                 if (sessionStorage.getItem("Authenticated") !== "True"){
-                    window.location.href = "login.html";
+                    //window.location.href = "login.html";
                 }
             }catch{
-                window.location.href = "login.html";
+                //window.location.href = "login.html";
             }
             GET();
         </script>

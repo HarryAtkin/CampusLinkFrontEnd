@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusLink</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body class="dashboard">
@@ -13,12 +13,13 @@
         <div class="logo">CampusLink</div>
         <nav>
             <ul class="menu">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">My Studies</a></li>
-                <li><a href="#">Discussions</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+<!--                <li><a href="#">My Studies</a></li>-->
+                <li><a href="GroupChat.html">Discussions</a></li>
                 <li><a href="#">Classes</a></li>
+                <li><a href="#">Attendance</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Help Centre</a></li>
+<!--                <li><a href="#">Help Centre</a></li>-->
             </ul>
         </nav>
     </aside>
@@ -26,21 +27,21 @@
     <div class="main-container">
 
         <header>
-            <div class="search-bar">
-                <input type="text" placeholder="Search here..." aria-label="Search">
-            </div>
+<!--            <div class="search-bar">-->
+<!--                <input type="text" placeholder="Search here..." aria-label="Search">-->
+<!--            </div>-->
             <div class="profile">
                 <span>Jane Doe</span>
             </div>
         </header>
 
         <main>
-            <section class="cards">
-                <a href="#" class="card">Library</a>
-                <a href="#" class="card">Student Union</a>
-                <a href="#" class="card">My Attendance</a>
-                <a href="#" class="card">University Life</a>
-            </section>
+<!--            <section class="cards">-->
+<!--                <a href="#" class="card">Library</a>-->
+<!--                <a href="#" class="card">Student Union</a>-->
+<!--                <a href="#" class="card">My Attendance</a>-->
+<!--                <a href="#" class="card">University Life</a>-->
+<!--            </section>-->
 
             <section class="content">
 
@@ -67,7 +68,7 @@
 
                 <div class="container2">
                     <div class="add-task">
-                        <h2>Upcoming Assessments</h2>
+                        <h2>Personal todo list</h2>
                         <div class="row">
                             <input type="text" id="input-box" placeholder="Add your task" aria-label="New Task">
                             <button onclick="addTask()">Add</button>

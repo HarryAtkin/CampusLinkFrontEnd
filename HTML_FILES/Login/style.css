@@ -430,7 +430,7 @@ header {
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(/icons/unchecked.svg);
+    background-image: url(icons/unchecked.svg);
     background-size: cover;
     background-position: center;
     top: 7px;
@@ -443,7 +443,7 @@ header {
 }
 
 .container2 ul li.checked::before {
-    background-image: url(/icons/checked.svg);
+    background-image: url(icons/checked.svg);
 }
 
 .container2 ul li span {
@@ -462,3 +462,139 @@ header {
 .container2 ul li span:hover {
     background: #edeef0;
 }
+
+/*Chatroom*/
+
+.Profile {
+    display: flex;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: auto;
+    z-index: 1000;
+}
+
+.Profile input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 150px;
+    background-color: transparent;
+    color: #333;
+}
+
+.Profile button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.Search {
+    display: flex;
+    border: none;
+    padding: 5px;
+    border-radius: 20px;
+    align-items: center;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.NavBar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    width: auto;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    height: 90vh;
+    z-index: 1000;
+    border-radius: 30px;
+    justify-content: space-between;
+}
+
+.NavBar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-grow: 1;
+}
+
+.NavBar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.NavBar li:last-child {
+    margin-top: auto;
+}
+
+.GroupChat {
+    flex-grow: 1;
+    text-align: left;
+    margin: 85px 20px 40px 150px;
+    display: flex;
+    flex-direction: column;
+    background: var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    height: 80vh;
+    width: 60vw;
+    overflow-y: auto;
+}
+
+.GroupChat h1 {
+    position: sticky;
+    top: 0;
+    padding: 10px 0;
+    z-index: 10;
+    color: white;
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.group-box::-webkit-scrollbar {
+    display: none;
+}
+
+.group-item {
+    background-color: #777;
+    color: white;
+    height: 100px;
+    padding: 30px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    font-size: 20px;
+}
+
+.group-item:hover {
+    transform: translateY(-3px);
+}
+
