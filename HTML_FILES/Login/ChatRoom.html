@@ -6,54 +6,33 @@
     <title>Title</title>
 </head>
 <body class="chats">
-    <script>
-        console.log(sessionStorage.getItem("chatRoomSelection"))
 
-        function rest(ms) {
-            new Promise(resolve => setTimeout(resolve, ms));
-            window.location.reload()
-        }
-
-        async function PostChatroomName() {
-            let HTTPData = {
-                method: 'POST',
-                body: sessionStorage.getItem("chatRoomSelection"),
-                headers: new Headers({
-                    'Content-Type': 'application/json; charset=UTF-8'
-                })
-            };
-
-            let response1 = await fetch("http://localhost:8080/api/v1/chatRoom/Room", HTTPData)
-        }
-
-        async function GETComments(){
-
-            response = await fetch("http://localhost:8080/api/v1/chatRoom/Room")
-                .then(response => response.json())
-            for(let i = 0; i < response.length; i++){
-                console.log(response[i]);
-            }
-        }
-
-
-        PostChatroomName();
-        rest(50000000);
-        GETComments();
-        rest(2000);
-        GETComments();
-
-    </script>
 <!-- Sidebar -->
-    <aside class="sidebar-2">
-        <nav class="menu">
-            <ul>
-                <li><a href="#"><img src="/icons/menu.svg" class="icons"></a></li>
-                <li><a href="#"><img src="/icons/dashboard.svg" class="icons"></a></li>
-                <li><a href="#"><img src="/icons/cap.svg" class="icons"></a></li>
-                <li><a href="#"><img src="/icons/chat.svg" class="icons"></a></li>
-                <li><a href="#"><img src="/icons/calendar.svg" class="icons"></a></li>
-                <li><a href="#"><img src="/icons/settings.svg" class="icons"></a></li>
-                <li><a href="register.html"><img src="/icons/logout.svg" class="icons"></a></li>
+<!--    <aside class="sidebar-2">-->
+<!--        <nav class="menu">-->
+<!--            <ul>-->
+<!--                <li><a href="#"><img src="icons/menu.svg" class="icons"></a></li>-->
+<!--                <li><a href="#"><img src="icons/dashboard.svg" class="icons"></a></li>-->
+<!--                <li><a href="#"><img src="icons/cap.svg" class="icons"></a></li>-->
+<!--                <li><a href="#"><img src="icons/chat.svg" class="icons"></a></li>-->
+<!--                <li><a href="#"><img src="icons/calendar.svg" class="icons"></a></li>-->
+<!--                <li><a href="#"><img src="icons/settings.svg" class="icons"></a></li>-->
+<!--                <li><a href="register.html"><img src="icons/logout.svg" class="icons"></a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </aside>-->
+
+    <aside class="sidebar">
+        <div class="logo">CampusLink</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <!--                <li><a href="#">My Studies</a></li>-->
+                <li><a href="GroupChat.html">Discussions</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">Settings</a></li>
+                <!--                <li><a href="#">Help Centre</a></li>-->
             </ul>
         </nav>
     </aside>
@@ -61,101 +40,191 @@
     <div class="chat-container">
         
         <!-- Left Container -->
-        <div class="container-left">
-            <div class="profile-student">
-                <div class="header-student">
-                    <img src="icons/profile.svg" alt="Profile" class="profile-img">
-                    <div class="name-student">Jane Doe</div>
-                    <div class="profile-id">U1234567</div>
-                </div>
-                <div class="modules">
-                    <div class="titles">Modules</div>
-                    <div class="modules-list">
-                        <div class="modules-icon">CM</div>
-                        <div class="modules-icon">OOP</div>
-                        <div class="modules-icon">SDD</div>
-                    </div>
-                </div>
-            </div>
-            <div class="chats-section">
-                <div class="titles">Chats</div>
-                <div class="chats-tabs">
-                    <button class="active">All</button>
-                    <button class="active">New</button>
-                    <button class="active">Closed</button>
-                </div>
-                <ul class="chat-list">
-                    <li class="chat-item">
-                        <div class="chat-item-content">
-                            <img src="icons/profile.svg" alt="Donald" class="chat-avatar">
-                            <div class="chat-name">Donald</div>
-                        </div>
-                    </li>
-                    <li class="chat-item">
-                        <div class="chat-item-content">
-                            <img src="icons/profile.svg" alt="Diana" class="chat-avatar">
-                            <div class="chat-name">Diana</div>
-                        </div>
-                    </li>
-                    <li class="chat-item">
-                        <div class="chat-item-content">
-                            <img src="icons/profile.svg" alt="Kristin Watson" class="chat-avatar">
-                            <div class="chat-name">Kristin Watson</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<!--        <div class="container-left">-->
+<!--            <div class="profile-student">-->
+<!--                <div class="header-student">-->
+<!--                    <img src="icons/profile.svg" alt="Profile" class="profile-img">-->
+<!--                    <div class="name-student">Jane Doe</div>-->
+<!--                    <div class="profile-id">U1234567</div>-->
+<!--                </div>-->
+<!--                <div class="modules">-->
+<!--                    <div class="titles"></div>-->
+<!--                    <div class="modules-list">-->
+<!--                        <div class="modules-icon">CM</div>-->
+<!--                        <div class="modules-icon">OOP</div>-->
+<!--                        <div class="modules-icon">SDD</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="chats-section">-->
+<!--                <div class="titles">Chats</div>-->
+<!--                <div class="chats-tabs">-->
+<!--                    <button class="active">All</button>-->
+<!--                    <button class="active">New</button>-->
+<!--                    <button class="active">Closed</button>-->
+<!--                </div>-->
+<!--                <ul class="chat-list">-->
+<!--                    <li class="chat-item">-->
+<!--                        <div class="chat-item-content">-->
+<!--                            <img src="icons/profile.svg" alt="Donald" class="chat-avatar">-->
+<!--                            <div class="chat-name">Donald</div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="chat-item">-->
+<!--                        <div class="chat-item-content">-->
+<!--                            <img src="icons/profile.svg" alt="Diana" class="chat-avatar">-->
+<!--                            <div class="chat-name">Diana</div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                    <li class="chat-item">-->
+<!--                        <div class="chat-item-content">-->
+<!--                            <img src="icons/profile.svg" alt="Kristin Watson" class="chat-avatar">-->
+<!--                            <div class="chat-name">Kristin Watson</div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <!-- Chat Box -->
         <div class="container-centre">
-            <div class="chat-header">
-                <div class="search-bar">
-                    <img src="/icons/search.png" alt="Search">
-                    <input type="text" placeholder="Search here">
+<!--            <div class="chat-header">-->
+<!--                <div class="search-bar">-->
+<!--                    <img src="/icons/search.png" alt="Search">-->
+<!--                    <input type="text" placeholder="Search here">-->
+<!--                </div>-->
+<!--                <div class="header-icons">-->
+<!--                    <img src="/icons/more.svg" alt="More">-->
+<!--                    <img src="/icons/notification.svg" alt="Notifications">-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="msg-sent" id="textBox">
+                <div class="msg-bubble-sent">
                 </div>
-                <div class="header-icons">
-                    <img src="/icons/more.svg" alt="More">
-                    <img src="/icons/notification.svg" alt="Notifications">
-                </div>
-            </div>
-            <div class="msg-sent">
-                <div class="msg-bubble-sent"></div>
                 <div class="msg-time-sent"></div>
             </div>
             <div class="chat-input">
-                <img src="/icons/link.svg" alt="Attachment">
-                <input type="text" placeholder="Type a message">
-                <img src="/icons/emoji.svg" alt="Emoji">
-                <button>Send <img src="/icons/send.svg" alt="Send"></button>
+                <img src="icons/link.svg" alt="Attachment">
+                <input type="text" placeholder="Type a message" id="input_text">
+                <img src="icons/emoji.svg" alt="Emoji">
+                <button onclick="Send()">Send <img src="icons/send.svg" alt="Send"></button>
             </div>
         </div>
 
         <!-- Right Container -->
-        <div class="container-right">
-            <img src="/icons/arrow.svg" alt="Close Teacher Info" class="close-info">
-            <div class="profile-teacher">
-                <div class="header-teacher">
-                    <img src="/icons/profile.svg" alt="Kristin Watson" class="profile-img">
-                    <div class="name-teacher">John Doe</div>
-                </div>
-                <div class="profile-details">
-                    <div><strong>Email:</strong> J.Doe@unimail.hud.ac.uk</div>
-                    <div><strong>Office Location:</strong> SJ1/05</div>
-                    <div><strong>Office Hours:</strong> Monday: 14:00-16:00</div>
-                </div>
-                <div class="shared-files">
-                    <header class="shared-files-header">
-                        <strong>Shared files</strong>
-                        <a href="#">View all</a>
-                    </header>
-                    <ul class="file-list">
-                        <li class="file-item"></li>
-                    </ul>
-                </div>
+<!--        <div class="container-right">-->
+<!--            <img src="icons/arrow.svg" alt="Close Teacher Info" class="close-info">-->
+<!--            <div class="profile-teacher">-->
+<!--                <div class="header-teacher">-->
+<!--                    <img src="icons/profile.svg" alt="Kristin Watson" class="profile-img">-->
+<!--                    <div class="name-teacher">John Doe</div>-->
+<!--                </div>-->
+<!--                <div class="profile-details">-->
+<!--                    <div><strong>Email:</strong> J.Doe@unimail.hud.ac.uk</div>-->
+<!--                    <div><strong>Office Location:</strong> SJ1/05</div>-->
+<!--                    <div><strong>Office Hours:</strong> Monday: 14:00-16:00</div>-->
+<!--                </div>-->
+<!--                <div class="shared-files">-->
+<!--                    <header class="shared-files-header">-->
+<!--                        <strong>Shared files</strong>-->
+<!--                        <a href="#">View all</a>-->
+<!--                    </header>-->
+<!--                    <ul class="file-list">-->
+<!--                        <li class="file-item"></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
             </div>
         </div>
         
     </div>
+
+<script>
+
+    const room = sessionStorage.getItem("chatRoomSelection");
+
+    async function Send() {
+        await PostChatroomName();
+        let HTTPData1 = {
+            method: 'POST',
+            body: sessionStorage.getItem("Email"),
+            headers: new Headers({
+                'Content-Type': 'application/json; charset=UTF-8'
+            })
+        };
+
+        let response = await fetch("http://localhost:8080/api/v1/chatRoom", HTTPData1)
+
+        let temp = document.getElementById("input_text").value
+        let HTTPData = {
+            method: 'POST',
+            body: temp,
+            headers: new Headers({
+                'Content-Type': 'application/json; charset=UTF-8'
+            })
+        };
+
+        let response1 = await fetch("http://localhost:8080/api/v1/chatRoom/Room/send", HTTPData)
+        await GETComments();
+
+    }
+
+
+
+    async function PostChatroomName() {
+        let HTTPData = {
+            method: 'POST',
+            body: room,
+            headers: new Headers({
+                'Content-Type': 'application/json; charset=UTF-8'
+            })
+        };
+
+        let response1 = await fetch("http://localhost:8080/api/v1/chatRoom/Room", HTTPData)
+    }
+
+     function GETUser(val1, val2){
+
+        elementTime = document.createElement('div');
+        elementTime.className = "msg-time-sent"
+        elementTime2 = document.createElement('p')
+        elementTime2.textContent = val1 + " " + val2
+        elementTime.appendChild(elementTime2)
+        document.getElementById("textBox").appendChild(elementTime);
+    }
+
+
+    async function GETComments() {
+        await PostChatroomName();
+        const temp = document.getElementById("textBox")
+        temp.innerHTML = '';
+        window.location.reload();
+        window.stop();
+        response = await fetch("http://localhost:8080/api/v1/chatRoom/Room")
+            .then(response => response.json())
+        for (let i = 0; i < response.length; i++) {
+            let v = response[i].split(",");
+            GETUser(v[v.length-2], v[v.length-1]);
+            v.pop();
+            v.pop();
+
+            element = document.createElement('div');
+            element.className = "msg-bubble-sent"
+            element2 = document.createElement('p')
+            element2.textContent = v
+            element.appendChild(element2)
+            document.getElementById("textBox").appendChild(element);
+
+        }
+
+    }
+
+    GETComments();
+            window.setInterval(GETComments, 5000)
+
+
+
+</script>
+
+
 </body>
 </html>

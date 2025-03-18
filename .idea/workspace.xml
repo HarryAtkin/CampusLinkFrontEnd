@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f50d1a0f-4b5d-4a6c-848d-27956e3eec00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/ChatRoom.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/ChatRoom.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/GroupChat.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/GroupChat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
     </list>
@@ -60,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/harry/Desktop/Uni coursework/Y2/TeamProject2/CampusLinkBackEnd",
+    "last_opened_file_path": "C:/Users/harry/Desktop/Uni coursework/Y2/TeamProject2/CampusLinkBackend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,6 +118,7 @@
       <workItem from="1741617803118" duration="2920000" />
       <workItem from="1741809219393" duration="27000" />
       <workItem from="1741809278908" duration="2868000" />
+      <workItem from="1742142377292" duration="15541000" />
     </task>
     <servers />
   </component>

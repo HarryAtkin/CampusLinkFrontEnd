@@ -109,7 +109,8 @@
                     element.className = "group-item"
                     element.onclick = () => {
                         sessionStorage.setItem("chatRoomSelection", response[i]);
-                        window.location.href = "ChatRoom.html"}
+                        window.location.href = "ChatRoom.html"
+                    }
                     element.appendChild(document.createTextNode(response[i]))
                     document.getElementById("groupBox").appendChild(element);
                 }
@@ -143,10 +144,10 @@
             }
             try{
                 if (sessionStorage.getItem("Authenticated") !== "True"){
-                    //window.location.href = "login.html";
+                    window.location.href = "login.html";
                 }
             }catch{
-                //window.location.href = "login.html";
+                window.location.href = "login.html";
             }
             GET();
         </script>

@@ -69,7 +69,7 @@ public class Server {
 
     private static Path getFilePath(String path) {//This method gets the file path that the client requests
         if ("/".equals(path)) {//This will check if there is a specified path added to the host.
-            path = "/dashboard.html"; //Path of the html page for the home page
+            path = "/login.html"; //Path of the html page for the home page
         }
         else{
 
