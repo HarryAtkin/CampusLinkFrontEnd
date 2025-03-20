@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .calendar-container {
+            width: 90%;
+            margin: 20px auto;
+            border: 1px solid black;
+            border-radius: 2px;
+            padding: 10px;
+            position: relative;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-buttons button {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .nav-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th {
+            background-color: #f4f4f4;
+            height: 40px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .today {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+        }
+        .time-col {
+            width: 60px;
+            font-size: 14px;
+            text-align: right;
+            padding-right: 10px;
+            position: relative;
+            white-space: nowrap;
+        }
+        .time-col span {
+            position: absolute;
+            bottom: -7px;
+            right: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        td {
+            position: relative;
+            height: 50px;
+            text-align: center;
+            vertical-align: top;
+        }
+        td:not(.time-col)::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-top: 1px solid #aaa;
+        }
+        .event {
+            background-color: lightblue;
+            padding: 2px 5px;
+            margin: 2px;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            display: none;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+        #addEventButton {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calendar-container">
+        <div class="header-container">
+            <h2>Weekly Calendar</h2>
+            <div>
+                <button id="addEventButton">+ Add Event</button>
+                <div class="nav-buttons">
+                    <button id="prevWeek">&lt;</button>
+                    <button id="todayBtn">Today</button>
+                    <button id="nextWeek">&gt;</button>
+                </div>
+            </div>
+        </div>
+        <table id="calendarTable">
+            <thead>
+                <tr id="weekDays">
+                    <th id="monthYearCell"></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="eventForm">
+        <h3>Add/Edit Event</h3>
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName"><br>
+        <label for="eventDate">Date (YYYY-MM-DD):</label>
+        <input type="date" id="eventDate"><br>
+        <label for="eventStartTime">Start Time (HH:MM):</label>
+        <input type="time" id="eventStartTime"><br>
+        <label for="eventEndTime">End Time (HH:MM):</label>
+        <input type="time" id="eventEndTime"><br>
+        <button id="saveEventBtn">Save Event</button>
+        <button id="deleteEventBtn">Delete Event</button>
+        <button id="cancelEventBtn">Cancel</button>
+    </div>
+
+    <script>
+        const tableBody = document.querySelector("#calendarTable tbody");
+        const weekDaysRow = document.getElementById("weekDays");
+        const prevWeekBtn = document.getElementById("prevWeek");
+        const nextWeekBtn = document.getElementById("nextWeek");
+        const todayBtn = document.getElementById("todayBtn");
+        const addEventBtn = document.getElementById("addEventBtn");
+        const addEventButton = document.getElementById("addEventButton");
+        const eventForm = document.getElementById("eventForm");
+        const saveEventBtn = document.getElementById("saveEventBtn");
+        const deleteEventBtn = document.getElementById("deleteEventBtn");
+        const cancelEventBtn = document.getElementById("cancelEventBtn");
+        const modalOverlay = document.getElementById("modalOverlay");
+
+        let currentWeekStart = new Date();
+        let events = [];
+        let selectedEventIndex = -1;
+
+        function displayMonthYear() {
+            const monthYearCell = document.getElementById("monthYearCell");
+            let options = { year: 'numeric', month: 'long' };
+            let monthYear = currentWeekStart.toLocaleDateString('en-US', options);
+            monthYearCell.innerHTML = monthYear;
+        }
+
+        function getWeekDates(startDate) {
+            let startOfWeek = new Date(startDate);
+            let dayOfWeek = startOfWeek.getDay();
+            startOfWeek.setDate(startOfWeek.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
+
+            let dates = [];
+            for (let i = 0; i < 7; i++) {
+                let day = new Date(startOfWeek);
+                day.setDate(startOfWeek.getDate() + i);
+                dates.push(day);
+            }
+            return dates;
+        }
+
+        function generateWeekDays() {
+            weekDaysRow.innerHTML = "<th id='monthYearCell'></th>";
+            let weekDates = getWeekDates(currentWeekStart);
+
+            weekDates.forEach(date => {
+                let dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+                let dayNumber = date.getDate();
+                let isToday = new Date().toDateString() === date.toDateString();
+                let th = document.createElement("th");
+                th.innerHTML = `${dayName} <br> ${isToday ? `<span class="today">${dayNumber}</span>` : dayNumber}`;
+                weekDaysRow.appendChild(th);
+            });
+
+            displayMonthYear();
+        }
+
+        function createCalendar() {
+            tableBody.innerHTML = "";
+            for (let hour = 0; hour < 24; hour++) {
+                let row = document.createElement("tr");
+
+                let timeCell = document.createElement("td");
+                let formattedHour = hour < 10 ? `0${hour}:00` : `${hour}:00`;
+                let timeLabel = document.createElement("span");
+                timeLabel.textContent = formattedHour;
+                timeCell.classList.add("time-col");
+                timeCell.appendChild(timeLabel);
+                row.appendChild(timeCell);
+
+                for (let day = 0; day < 7; day++) {
+                    let cell = document.createElement("td");
+                    row.appendChild(cell);
+                }
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        function displayEvents() {
+            let weekDates = getWeekDates(currentWeekStart);
+            events.forEach((event, index) => {
+                let eventDate = new Date(event.date);
+                let startTime = event.startTime.split(":");
+                let endTime = event.endTime.split(":");
+
+                let startHour = parseInt(startTime[0]);
+                let startMinute = parseInt(startTime[1]);
+                let endHour = parseInt(endTime[0]);
+                let endMinute = parseInt(endTime[1]);
+
+                let eventDayIndex = weekDates.findIndex(date => date.toDateString() === eventDate.toDateString());
+
+                if (eventDayIndex !== -1) {
+                    let startRow = startHour + 1;
+                    let endRow = endHour + 1;
+
+                    if (endMinute === 0 && startMinute !== 0) {
+                      endRow = endHour;
+                    } else if (endMinute > 0) {
+                      endRow = endHour + 1;
+                    }
+
+                    for (let hour = startRow; hour < endRow; hour++) {
+                        let cell = tableBody.rows[hour].cells[eventDayIndex + 1];
+                        let eventDiv = document.createElement("div");
+                        eventDiv.classList.add("event");
+                        eventDiv.textContent = event.name;
+
+                        if (hour === startRow && startMinute !== 0) {
+                            let height = (60 - startMinute) / 60 * 50;
+                            eventDiv.style.height = `${height}px`;
+                            eventDiv.style.marginTop = `${startMinute/60 * 50}px`;
+                        } else if (hour === endRow -1 && endMinute !== 0) {
+                          let height = endMinute / 60 * 50;
+                            eventDiv.style.height = `${height}px`;
+                        } else {
+                          eventDiv.style.height = `50px`;
+                        }
+
+                        eventDiv.addEventListener("click", () => {
+                            selectedEventIndex = index;
+                            document.getElementById("eventName").value = event.name;
+                            document.getElementById("eventDate").value = event.date;
+                            document.getElementById("eventStartTime").value = event.startTime;
+                            document.getElementById("eventEndTime").value = event.endTime;
+                            eventForm.style.display = "block";
+                            modalOverlay.style.display = "block";
+                        });
+
+                        cell.appendChild(eventDiv);
+                    }
+                }
+            });
+        }
+
+        function updateCalendar() {
+            generateWeekDays();
+            createCalendar();
+            displayEvents();
+        }
+
+        prevWeekBtn.addEventListener("click", () => {
+            currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+            updateCalendar();
+        });
+
+        nextWeekBtn.addEventListener("click", () => {
+            currentWeekStart.setDate(currentWeekStart.getDate() + 7);
+            updateCalendar();
+        });
+
+        todayBtn.addEventListener("click", () => {
+            currentWeekStart = new Date();
+            updateCalendar();
+        });
+
+        addEventButton.addEventListener("click", () => {
+            selectedEventIndex = -1;
+            document.getElementById("eventName").value = "";
+            document.getElementById("eventDate").value = "";
+            document.getElementById("eventStartTime").value = "";
+            document.getElementById("eventEndTime").value = "";
+            eventForm.style.display = "block";
+            modalOverlay.style.display = "block";
+        });
+
+        saveEventBtn.addEventListener("click", () => {
+            const name = document.getElementById("eventName").value;
+            const date = document.getElementById("eventDate").value;
+            const startTime = document.getElementById("eventStartTime").value;
+            const endTime = document.getElementById("eventEndTime").value;
+
+            if (name && date && startTime && endTime) {
+                if (selectedEventIndex === -1) {
+                    events.push({ name, date, startTime, endTime });
+                } else {
+                    events[selectedEventIndex] = { name, date, startTime, endTime };
+                }
+                eventForm.style.display = "none";
+                modalOverlay.style.display = "none";
+                updateCalendar();
+            }
+        });
+
+        deleteEventBtn.addEventListener("click", () => {
+            if (selectedEventIndex !== -1) {
+                events.splice(selectedEventIndex, 1);
+                selectedEventIndex = -1;
+                eventForm.style.display = "none";
+                modalOverlay.style.display = "none";
+                updateCalendar();
+            }
+        });
+
+        cancelEventBtn.addEventListener("click", () => {
+            eventForm.style.display = "none";
+            modalOverlay.style.display = "none";
+            selectedEventIndex = -1;
+        });
+
+        updateCalendar();
+    </script>
+
+</body>
+</html>
