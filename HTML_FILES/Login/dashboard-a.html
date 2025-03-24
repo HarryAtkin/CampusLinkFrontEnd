@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusLink Admin Dashboard</title>
+    <link rel="stylesheet" href="../style/style-admin.css">
+    <script src="../script-admin.js"></script>
+</head>
+<body class="admin">
+    <!-- Header -->
+    <header class="top-header">
+        <div class="user-profile-container">
+            <img src="/icons/notification.svg" class="notification-icon">
+            <div class="user-profile">
+                <img src="/icons/profile.svg" alt="User Profile" class="profile-image">
+                <span class="user-name">Jane Doe</span>
+                <span class="dropdown-arrow">&#9662;</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">CampusLink</div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-a.html"><img src="/icons/dashboard.svg" alt="Dashboard Icon" class="icons">Dashboard</a></li>
+                <li><a href="messenger-a.html"><img src="/icons/chat.svg" alt="Messenger Icon" class="icons">Messenger</a></li>
+                <li><a href="timetables-a.html"><img src="/icons/calendar.svg" alt="Calendar Icon" class="icons">Timetabels</a></li>
+                <li><a href="database.html"><img src="/icons/document.svg" alt="Database Icon" class="icons">Database</a></li>
+                <li><a href="attendance-a.html"><img src="/icons/attendance.svg" alt="Attendance Icon" class="icons">Attendance</a></li>
+            </ul>
+            <div class="sidebar-buttons">
+                <li><a href="settings-a.html"><img src="/icons/settings.svg" alt="Settings Icon" class="icons">Settings</a></li>
+                <li><a href="../login.html"><img src="/icons/logout.svg" alt="Logout Icon" class="icons">Log Out</a></li>
+            </div>
+        </nav>
+
+        <!-- Middle Content -->
+        <div class="middle-content">
+            <main class="admin-content">
+                <!-- Top Section: Cards -->
+                <div class="container">
+                    <div class="card">
+                        <span class="year">2024/25</span>
+                        <span class="dots" data-link="#">&#8943;</span>
+                        <h2>2</h2>
+                        <p>Admins</p>
+                    </div>
+                    <div class="card">
+                        <span class="year">2024/25</span>
+                        <span class="dots" data-link="#">&#8943;</span>
+                        <h2>24</h2>
+                        <p>Teachers</p>
+                    </div>
+                    <div class="card">
+                        <span class="year">2024/25</span>
+                        <span class="dots" data-link="#">&#8943;</span>
+                        <h2>460</h2>
+                        <p>Students</p>
+                    </div>
+                    <div class="card">
+                        <span class="year">2024/25</span>
+                        <span class="dots" data-link="#">&#8943;</span>
+                        <h2>132</h2>
+                        <p>Courses</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Discussion and Attendance -->
+                <div class="attendance-discussions-container">
+                    <!-- Discussion Box -->
+                    <div class="discussions-container">
+                        <div class="discussions-header">
+                            <h2>Discussions</h2>
+                            <span class="dots">&#8943;</span>
+                        </div>
+                        <div class="discussions-list">
+                            <!-- Example Discussion Messages -->
+                            <div class="message">
+                                <p><strong>John Doe:</strong> I hate coding in HTML/CSS.</p>
+                            </div>
+                            <div class="message">
+                                <p><strong>Jane Smith:</strong> The right hand side for the calendar took the piss:)</p>
+                            </div>
+                            <div class="message">
+                                <p><strong>Admin:</strong> Reminder: Submit your feedback.</p>
+                            </div>
+                            <div class="message">
+                              <p><strong>John Doe:</strong> Can we reschedule the meeting?</p>
+                          </div>
+                          <div class="message">
+                              <p><strong>Jane Smith:</strong> I'll send the report by tommorow.</p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <!-- Attendance Box -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h2>Attendance</h2>
+                            <span class="dots">&#8943;</span>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="present"></span> present
+                            <span class="absent"></span> absent
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-group">
+                                <div class="bar bar-mon"></div>
+                                <div class="bar-label">Mon</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar bar-tue"></div>
+                                <div class="bar-label">Tue</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar bar-wed"></div>
+                                <div class="bar-label">Wed</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar bar-thu"></div>
+                                <div class="bar-label">Thu</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar bar-fri"></div>
+                                <div class="bar-label">Fri</div>
+                            </div>
+                        </div>
+                        <div class="chart-y-axis">
+                            <span>100</span>
+                            <span>75</span>
+                            <span>50</span>
+                            <span>25</span>
+                            <span>0</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+          <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <h2 id="current-month">October 2023</h2>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid">
+                <!-- Days of the week -->
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+                <!-- Dates will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Events Section -->
+        <div class="events">
+            <h2>Events</h2>
+            <ul id="events-list">
+                <!-- Events will be dynamically inserted here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
