@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekly Calendar</title>
+    <link href="style.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -129,7 +130,20 @@
     </style>
 </head>
 <body>
-
+<aside class="sidebar">
+    <div class="logo">CampusLink</div>
+    <nav>
+        <ul class="menu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <!--                <li><a href="#">My Studies</a></li>-->
+            <li><a href="GroupChat.html">Discussions</a></li>
+            <li><a href="Timetable.html">Classes</a></li>
+            <li><a href="#">Attendance</a></li>
+            <li><a href="#">Settings</a></li>
+            <!--                <li><a href="#">Help Centre</a></li>-->
+        </ul>
+    </nav>
+</aside>
     <div class="calendar-container">
         <div class="header-container">
             <h2>Weekly Calendar</h2>
@@ -169,6 +183,7 @@
     </div>
 
     <script>
+
         const tableBody = document.querySelector("#calendarTable tbody");
         const weekDaysRow = document.getElementById("weekDays");
         const prevWeekBtn = document.getElementById("prevWeek");
@@ -367,7 +382,77 @@
             selectedEventIndex = -1;
         });
 
-        updateCalendar();
+        function thing(name, date, startTime, endTime){
+            if (name && date && startTime && endTime) {
+
+                if (selectedEventIndex === -1) {
+                    events.push({ name, date, startTime, endTime });
+                    console.log(events);
+                } else {
+                    events[selectedEventIndex] = { name, date, startTime, endTime };
+
+                }
+                eventForm.style.display = "none";
+                modalOverlay.style.display = "none";
+                updateCalendar();
+            }
+        }
+
+        async function GET(){
+
+            let HTTPData1 = {
+                method: 'POST',
+                body: sessionStorage.getItem("Email"),
+                headers: new Headers({
+                    'Content-Type': 'application/json; charset=UTF-8'
+                })
+            };
+
+            let response = await fetch("http://localhost:8080/api/v1/studentTools/timeTable", HTTPData1)
+
+
+
+            let response1 = await fetch("http://localhost:8080/api/v1/studentTools/timeTable")
+                .then(response1=> response1.json())
+            console.log(response1)
+            console.log(response1[0][0][0])//Name
+            //console.log(response1[0][1])//Start date time
+            //console.log(response1[0][2])//End Date.
+
+
+
+
+
+            for(let i = 0; i < response1.length; i++){
+                for(let j = 0; j < response1[i].length; j++){
+
+                    let timeDateS = response1[i][j][1].split(" ");
+                    let timeDateF = response1[i][j][2].split(" ");
+                    let timeS = timeDateS[1].split(".");
+                    let timeF = timeDateF[1].split(".");
+
+                    let name = response1[i][j][0];
+                    let date = timeDateS[0];
+                    let startTime = timeS[0];
+                    let endTime = timeF[0];
+
+                    console.log(name);
+                    console.log(date);
+                    console.log(startTime);
+                    console.log(endTime);
+
+                    thing(name, date, startTime, endTime);
+                }
+            }
+        }
+
+        GET();
+        //window.setInterval(GET, 5000)
+
+
+
+
+        //updateCalendar();
     </script>
 
 </body>
