@@ -13,12 +13,10 @@
         <nav>
             <ul class="menu">
                 <li><a href="dashboard.html">Dashboard</a></li>
-                <!--                <li><a href="#">My Studies</a></li>-->
                 <li><a href="GroupChat.html">Discussions</a></li>
                 <li><a href="Timetable.html">Classes</a></li>
-                <li><a href="#">Attendance</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
                 <li><a href="#">Settings</a></li>
-                <!--                <li><a href="#">Help Centre</a></li>-->
             </ul>
         </nav>
     </aside>
@@ -81,8 +79,6 @@
 
         <script>
             async function GET(){
-
-                console.log(sessionStorage.getItem("Email"))
                 let HTTPData = {
                     method: 'POST',
                     body: sessionStorage.getItem("Email"),
@@ -121,26 +117,6 @@
                     element.appendChild(document.createTextNode("Unable to get data from the server"))
                     document.getElementById("groupBox").appendChild(element);
                 }
-
-
-                    //chatList.appendChild(element);
-                    //document.body.insertBefore(element, chatList)
-
-
-                    /*
-                    let name = data.name
-                    let box = `<div class='group-item'>${name}</div>`;
-                    chatList.append(box) //Check this.
-
-                     */
-
-                /*for(let i = 0; i < 3; i++){
-                    let name = response[i]
-                    let box = "<div class='group-item'>, name ,</div>";
-                    chatList.append(box) //Check this.
-                }
-
-                 */
             }
             try{
                 if (sessionStorage.getItem("Authenticated") !== "True"){

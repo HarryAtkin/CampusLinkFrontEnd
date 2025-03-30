@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusLink Admin Dashboard</title>
-    <link rel="stylesheet" href="../style/style-admin.css">
+    <link rel="stylesheet" href="style-admin.css">
     <script src="../script-admin.js"></script>
 </head>
 <body class="admin">
@@ -46,25 +46,25 @@
                     <div class="card">
                         <span class="year">2024/25</span>
                         <span class="dots" data-link="#">&#8943;</span>
-                        <h2>2</h2>
+                        <h2 id = "admins">0</h2>
                         <p>Admins</p>
                     </div>
                     <div class="card">
                         <span class="year">2024/25</span>
                         <span class="dots" data-link="#">&#8943;</span>
-                        <h2>24</h2>
+                        <h2 id = "teachers">0</h2>
                         <p>Teachers</p>
                     </div>
                     <div class="card">
                         <span class="year">2024/25</span>
                         <span class="dots" data-link="#">&#8943;</span>
-                        <h2>460</h2>
+                        <h2 id = "students">0</h2>
                         <p>Students</p>
                     </div>
                     <div class="card">
                         <span class="year">2024/25</span>
                         <span class="dots" data-link="#">&#8943;</span>
-                        <h2>132</h2>
+                        <h2 id = "courses">0</h2>
                         <p>Courses</p>
                     </div>
                 </div>
@@ -170,5 +170,37 @@
             </ul>
         </div>
     </div>
+    </div>>
+    <script>
+
+
+        async function Amount(){
+            let admin = document.getElementById("admins")
+            let teacher = document.getElementById("teachers")
+            let student = document.getElementById("students")
+            let course = document.getElementById("courses")
+
+            let HTTPData = {
+                method: 'POST',
+                body: sessionStorage.getItem("Email"),
+                headers: new Headers({
+                    'Content-Type': 'application/json; charset=UTF-8'
+                })
+            };
+
+            const response1 = await fetch("http://localhost:8080/api/v1/adminTools/getInfo", HTTPData)
+            const response2 = await fetch("http://localhost:8080/api/v1/adminTools/getInfo/admin")
+                .then(response=> response.json())
+            admin.textContent = response2[0];
+            teacher.textContent = response2[1];
+            student.textContent = response2[2];
+            course.textContent = response2[3];
+        }
+
+        Amount();
+
+
+
+    </script>
 </body>
 </html>

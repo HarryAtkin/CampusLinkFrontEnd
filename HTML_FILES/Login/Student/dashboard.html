@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusLink</title>
-    <link rel="stylesheet" href="../style/style-student.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body class="dashboard">
@@ -14,12 +14,10 @@
         <nav>
             <ul class="menu">
                 <li><a href="dashboard.html">Dashboard</a></li>
-<!--                <li><a href="#">My Studies</a></li>-->
                 <li><a href="GroupChat.html">Discussions</a></li>
                 <li><a href="Timetable.html">Classes</a></li>
-                <li><a href="#">Attendance</a></li>
-                <li><a href="#">Settings</a></li>
-<!--                <li><a href="#">Help Centre</a></li>-->
+                <li><a href="attendance.html">Attendance</a></li>
+<!--                <li><a href="#">Settings</a></li>-->
             </ul>
         </nav>
     </aside>
@@ -27,21 +25,13 @@
     <div class="main-container">
 
         <header>
-<!--            <div class="search-bar">-->
-<!--                <input type="text" placeholder="Search here..." aria-label="Search">-->
-<!--            </div>-->
             <div class="profile">
-                <span>Jane Doe</span>
+                <span id = "name">Jane Doe</span>
             </div>
         </header>
 
         <main>
-<!--            <section class="cards">-->
-<!--                <a href="#" class="card">Library</a>-->
-<!--                <a href="#" class="card">Student Union</a>-->
-<!--                <a href="#" class="card">My Attendance</a>-->
-<!--                <a href="#" class="card">University Life</a>-->
-<!--            </section>-->
+
 
             <section class="content">
 
@@ -81,6 +71,25 @@
 
         </main>
     </div>
+
+<script>
+    async function GetName() {
+        let HTTPData1 = {
+            method: 'POST',
+            body: sessionStorage.getItem("Email"),
+            headers: new Headers({
+                'Content-Type': 'application/json; charset=UTF-8'
+            })
+        };
+
+        let response = await fetch("http://localhost:8080/api/v1/studentTools/studentDetails", HTTPData1);
+
+        let response1 = await fetch("http://localhost:8080/api/v1/studentTools/studentDetails/Name")
+            .then(response2 => response2.json());
+        document.getElementById("name").textContent = response1[0][0] + " " + response1[0][1];
+    }
+    GetName();
+</script>
 
 </body>
 </html>

@@ -56,7 +56,25 @@
             sessionStorage.setItem("Authenticated", "True");
             sessionStorage.setItem("Email", email)
             console.log(sessionStorage.getItem("Email"))
-            window.location.href = "GroupChat.html";
+            window.location.href = "/Student/dashboard.html";
+        }
+
+        if(response1.status == 418){
+                //header.innerHTML = "Logged in"
+            console.log("logged in")
+            sessionStorage.setItem("Authenticated", "True");
+            sessionStorage.setItem("Email", email)
+            console.log(sessionStorage.getItem("Email"))
+            window.location.href = "/Teacher/dashboard-t.html";
+        }
+
+        if(response1.status == 200){
+                //header.innerHTML = "Logged in"
+            console.log("logged in")
+            sessionStorage.setItem("Authenticated", "True");
+            sessionStorage.setItem("Email", email)
+            console.log(sessionStorage.getItem("Email"))
+            window.location.href = "/Admin/dashboard-a.html";
         }
 
         else if (response1.status == 401){
@@ -68,10 +86,6 @@
             //header.innerHTML = "It's not you it's us :("
             console.log("It's not you it's us :(")
         }
-
-        //const btnLogin = document.getElementById("btnLogin")
-        //btnLogin.onclick
-
         
     }
 

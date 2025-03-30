@@ -5,11 +5,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f50d1a0f-4b5d-4a6c-848d-27956e3eec00" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/assignment.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/cap.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/chat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/checked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/emoji.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/help.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/loupe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/more.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/notification.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/send.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/settings.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/unchecked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/icons/user-svgrepo-com (1).svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/attendance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/assignment.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/cap.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/chat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/checked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/emoji.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/help.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/loupe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/more.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/notification.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/send.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/settings.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/unchecked.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/icons/user-svgrepo-com (1).svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/ChatRoom.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/ChatRoom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/GroupChat.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/GroupChat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Timetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Timetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Admin/attendance-a.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/attendance-a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Admin/dashboard-a.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/dashboard-a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Admin/database.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/database.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Admin/messenger-a.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/messenger-a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Admin/settings-a.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/settings-a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Admin/timetables-a.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/timetables-a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Student/ChatRoom.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/ChatRoom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Student/GroupChat.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/GroupChat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Student/Timetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/Timetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Student/chatroom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Student/dashboard-s.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/dashboard-s.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Student/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/assignment-t.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/assignment-t.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/attendance-t.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/attendance-t.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/dashboard-t.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/dashboard-t.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/messeges-t.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/messeges-t.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/settings-t.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/settings-t.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/timetable-t.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/timetable-t.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/assignment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/calendar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/cap.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/chat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/checked.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/emoji.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/help.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/loupe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/more.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/notification.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/send.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/settings.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/unchecked.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/icons/user-svgrepo-com (1).svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/style/style-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Admin/style-admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/style/style-student.css" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/style/style-teacher.css" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Teacher/style-teacher.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML_FILES/Login/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/HTML_FILES/Login/Student/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,29 +121,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Server.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.GroupChat.html.executor": "Run",
-    "JavaScript Debug.login.html.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/harry/Desktop/Uni coursework/Y2/TeamProject2/CampusLinkBackend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.GroupChat.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.login.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/harry/Desktop/Uni coursework/Y2/TeamProject2/CampusLinkBackend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\harry\Desktop\Uni coursework\Y2\TeamProject2\CampusLinkFrontEnd\HTML_FILES\Login\Student" />
+      <recent name="C:\Users\harry\Desktop\Uni coursework\Y2\TeamProject2\CampusLinkFrontEnd\HTML_FILES\Login\Teacher" />
+      <recent name="C:\Users\harry\Desktop\Uni coursework\Y2\TeamProject2\CampusLinkFrontEnd\HTML_FILES\Login\Teacher\icons" />
+      <recent name="C:\Users\harry\Desktop\Uni coursework\Y2\TeamProject2\CampusLinkFrontEnd\HTML_FILES\Login\Admin" />
+      <recent name="C:\Users\harry\Desktop\Uni coursework\Y2\TeamProject2\CampusLinkFrontEnd\HTML_FILES\style" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\harry\Desktop\Uni coursework\Y2\TeamProject2\CampusLinkFrontEnd\HTML_FILES\Login\Student" />
+      <recent name="C:\Users\harry\Desktop\Uni coursework\Y2\TeamProject2\CampusLinkFrontEnd\HTML_FILES\Login" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -122,6 +207,10 @@
       <workItem from="1742302605981" duration="972000" />
       <workItem from="1742749853702" duration="726000" />
       <workItem from="1742764685474" duration="7164000" />
+      <workItem from="1743183657328" duration="12521000" />
+      <workItem from="1743253844856" duration="2441000" />
+      <workItem from="1743258328097" duration="1216000" />
+      <workItem from="1743370716507" duration="604000" />
     </task>
     <servers />
   </component>
